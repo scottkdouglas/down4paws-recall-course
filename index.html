@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come When Called: 30-Day Dog Recall Course | Down 4 Paws</title>
+    <meta name="description" content="Fix your dog's recall in 30 days with Pam Brown's proven 5-rule system. Science-backed, email-based training for real families.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-purple: #632a9f;
+            --primary-orange: #f36e14;
+            --black: #1a1a1a;
+            --white: #ffffff;
+
+            /* Warm Palette */
+            --cream: #fef9f3;
+            --terracotta: #d97757;
+            --sage: #87a878;
+            --warm-gray: #6b6560;
+            --soft-purple: #8b5fbf;
+            --light-orange: #ffa574;
+
+            /* Typography */
+            --font-display: 'Bricolage Grotesque', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+
+            /* Spacing */
+            --section-padding: clamp(60px, 10vw, 120px);
+            --container-max: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--black);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Decorative Background Blobs */
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--primary-purple);
+            top: -200px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--primary-orange);
+            bottom: 200px;
+            left: -150px;
+        }
+
+        .blob-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--sage);
+            top: 50%;
+            right: -100px;
+        }
+
+        /* Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--soft-purple) 100%);
+            color: var(--white);
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notice-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                left: 100%;
+            }
+        }
+
+        .notice-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid rgba(107, 101, 96, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .cta-btn {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(243, 110, 20, 0.3);
+        }
+
+        .cta-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pre-headline {
+            color: var(--warm-gray);
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 5.5vw, 68px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--black);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-orange);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: -4px;
+            right: -4px;
+            height: 12px;
+            background: var(--light-orange);
+            opacity: 0.3;
+            z-index: -1;
+            transform: skew(-2deg);
+        }
+
+        .subhead {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--warm-gray);
+            margin-bottom: 36px;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .subhead strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .hero .cta-btn {
+            font-size: 20px;
+            padding: 20px 48px;
+            align-self: flex-start;
+        }
+
+        .trust-indicators {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--warm-gray);
+        }
+
+        .trust-indicators svg {
+            color: var(--primary-orange);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-container:hover {
+            transform: rotate(0deg);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-accent {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 180px;
+            height: 180px;
+            background: var(--primary-purple);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-headline {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 28px;
+        }
+
+        .section-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--warm-gray);
+            margin-bottom: 20px;
+        }
+
+        .section-body strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(254, 249, 243, 0.5) 100%);
+        }
+
+        .solution-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .solution-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .section-subhead {
+            font-size: 20px;
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .rule-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 24px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--primary-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .rule-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .rule-number {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .rule-card h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .rule-card p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--white);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-orange), var(--primary-purple));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 48px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 18px;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 3px var(--light-orange);
+        }
+
+        .timeline-item h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .timeline-item li {
+            color: var(--warm-gray);
+            padding-left: 28px;
+            margin-bottom: 10px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .timeline-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--cream);
+        }
+
+        .testimonials-grid {
+            max-width: var(--container-max);
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: Georgia, serif;
+            font-size: 80px;
+            color: var(--light-orange);
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-purple);
+            font-size: 15px;
+        }
+
+        /* Who This Is For Section */
+        .who-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--white);
+        }
+
+        .who-grid {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 48px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 16px 0;
+            padding-left: 44px;
+            position: relative;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--black);
+            border-bottom: 1px solid rgba(107, 101, 96, 0.1);
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist.good li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 28px;
+            height: 28px;
+            background: var(--sage);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .checklist.bad li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 28px;
+            height: 28px;
+            background: var(--terracotta);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .who-grid h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        /* About Pam Section */
+        .about-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--soft-purple) 100%);
+            color: var(--white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .about-text strong {
+            font-weight: 600;
+            opacity: 1;
+        }
+
+        .about-note {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-top: 28px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .about-note a {
+            color: var(--white);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--cream);
+        }
+
+        .pricing-card {
+            max-width: 700px;
+            margin: 60px auto 0;
+            background: var(--white);
+            padding: 56px;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            border: 3px solid var(--primary-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .pricing-card h3 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 32px;
+            color: var(--black);
+        }
+
+        .price-comparison {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .old-price {
+            font-size: 28px;
+            color: var(--warm-gray);
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .new-price {
+            font-family: var(--font-display);
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            line-height: 1;
+        }
+
+        .savings-note {
+            background: rgba(243, 110, 20, 0.1);
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-bottom: 32px;
+            display: inline-block;
+        }
+
+        .whats-included {
+            margin: 32px 0;
+            list-style: none;
+        }
+
+        .whats-included li {
+            padding: 14px 0;
+            padding-left: 36px;
+            position: relative;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--black);
+        }
+
+        .whats-included li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .pricing-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .pricing-cta .cta-btn {
+            font-size: 22px;
+            padding: 22px 56px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            border: 2px solid rgba(107, 101, 96, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-orange);
+        }
+
+        .faq-question {
+            background: var(--white);
+            padding: 24px 28px;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(243, 110, 20, 0.05);
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            color: var(--primary-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(254, 249, 243, 0.5);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 24px 28px;
+        }
+
+        .faq-answer p {
+            color: var(--warm-gray);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .faq-answer strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            position: relative;
+            padding: var(--section-padding) 40px;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 32px;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .outcome-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 40px auto;
+            list-style: none;
+        }
+
+        .outcome-list li {
+            padding: 16px 0;
+            padding-left: 44px;
+            position: relative;
+            font-size: 19px;
+            line-height: 1.6;
+            color: var(--black);
+        }
+
+        .outcome-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 32px;
+            height: 32px;
+            background: var(--sage);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .reality-check {
+            font-size: 18px;
+            color: var(--warm-gray);
+            margin: 32px 0;
+            font-style: italic;
+        }
+
+        .final-cta .cta-btn {
+            font-size: 22px;
+            padding: 22px 56px;
+            margin-top: 20px;
+        }
+
+        .secondary-note {
+            margin-top: 32px;
+            font-size: 15px;
+            color: var(--warm-gray);
+        }
+
+        .secondary-note a {
+            color: var(--primary-purple);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 40px 32px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        .footer-info {
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .copyright {
+            font-size: 14px;
+            opacity: 0.5;
+            margin-top: 24px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 60px;
+            }
+
+            .hero-image-wrapper {
+                order: -1;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline::before {
+                left: 14px;
+            }
+
+            .timeline-dot {
+                left: 2px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-content {
+                padding: 16px 20px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .hero,
+            .problem-section,
+            .solution-section,
+            .how-it-works,
+            .testimonials,
+            .who-section,
+            .about-section,
+            .pricing-section,
+            .faq-section,
+            .final-cta {
+                padding: 48px 20px;
+            }
+
+            .section-headline {
+                font-size: 32px;
+            }
+
+            .pricing-card {
+                padding: 32px 24px;
+            }
+
+            .new-price {
+                font-size: 48px;
+            }
+
+            .notice-content {
+                font-size: 12px;
+                gap: 12px;
+            }
+
+            .rules-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--light-orange);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>⭐ 69 Five-Star Google Reviews</span>
+            <span>|</span>
+            <span>🎓 5 Years of Proven Training Methods</span>
+            <span>|</span>
+            <span>🎉 Early Bird: First 50 Members Save $50</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="EBC/images/D4P - Main Logo - White bg.png" alt="Down 4 Paws Dog Training">
+            </div>
+            <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+                <span>Join First 50 at $97</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="bg-blob blob-1"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="pre-headline">Does your smart dog suddenly act like they've never heard "come"?</p>
+                <h1>Your Dog Won't Come When Called — And It's Getting <span class="highlight">Scary</span></h1>
+                <p class="subhead"><strong>Here's the deal</strong> - whether it's a backyard standoff or your dog running toward the street, this is fixable. This 30-day email course teaches the same 5-rule system I use with my private clients. No fancy equipment. Just daily emails that show you what actually works.</p>
+                <div class="hero-cta-wrapper">
+                    <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+                        <span>Get Total Recall in 30 Days - $97</span>
+                    </a>
+                    <div class="trust-indicators">
+                        <span>✓ 30-Day Transformation</span>
+                        <span>✓ Science-Backed</span>
+                        <span>✓ Email-Based</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-container">
+                    <img src="EBC/images/D4P - Website Top Banner Image-Recall.jpg" alt="Happy dog with owner">
+                </div>
+                <div class="hero-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-headline">You've tried treats. You've tried bribing. Still nothing.</h2>
+            <p class="section-body">I get it. You're at the dog park. You call. Your dog looks at you... and runs the other way.</p>
+            <p class="section-body">Or worse - they're headed toward the street and you're screaming their name like a maniac.</p>
+            <p class="section-body"><strong>Here's what's actually happening:</strong> Your dog has learned that coming to you is optional. Maybe even unpleasant.</p>
+            <p class="section-body">The good news? This is <strong>completely fixable</strong>. Definitely.</p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="bg-blob blob-2"></div>
+        <div class="solution-container">
+            <div class="solution-intro">
+                <h2 class="section-headline">The 5-Rule System I Use with My Private Clients</h2>
+                <p class="section-subhead">This is the exact recall framework from my in-person training sessions. Same system, delivered through daily emails you can work through at your own pace.</p>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <span class="rule-number">RULE #1</span>
+                    <h3>Never Call for Unpleasant Things</h3>
+                    <p>Stop calling your dog to clip their nails, give them a bath, or leave the dog park. You're teaching them that "come" = something bad. Use their name or go get them instead.</p>
+                </div>
+
+                <div class="rule-card">
+                    <span class="rule-number">RULE #2</span>
+                    <h3>Only Call When You're Sure They'll Come</h3>
+                    <p>If your dog is chasing a squirrel, don't call them. You're practicing failure. Set them up to succeed - call when distractions are low, then gradually increase difficulty.</p>
+                </div>
+
+                <div class="rule-card">
+                    <span class="rule-number">RULE #3</span>
+                    <h3>Make It Happen Every Time</h3>
+                    <p>If you call and they don't come, calmly go get them. Never let "come" be optional. This single rule changes everything.</p>
+                </div>
+
+                <div class="rule-card">
+                    <span class="rule-number">RULE #4</span>
+                    <h3>Never Repeat the Command</h3>
+                    <p>Saying "come, come, COME, COME!" teaches your dog to ignore you the first 3 times. One call. Then go help them succeed.</p>
+                </div>
+
+                <div class="rule-card">
+                    <span class="rule-number">RULE #5</span>
+                    <h3>Pay Your Dog What They're Worth</h3>
+                    <p>Real talk - you need to figure out what your dog actually wants. For some dogs it's hot dogs. For others it's a ball. I'll show you how to run "food auditions" to discover your dog's currency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-headline">19 Emails. 30 Days. Total Transformation.</h2>
+            <p class="section-body">Here's exactly what happens:</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Days 1-8: Foundation rules that fix the mistakes you're making right now</h3>
+                <ul>
+                    <li>Why "smart" dogs suddenly stop listening (hint: it's developmental, not defiance)</li>
+                    <li>The treat station strategy that makes recall irresistible</li>
+                    <li>How to stop calling your dog for the next 48 hours (yes, seriously)</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Days 9-16: Building reliability</h3>
+                <ul>
+                    <li>The "kindergarten vs graduate level" concept that prevents frustration</li>
+                    <li>Focus exercises that make you more interesting than squirrels</li>
+                    <li>The backyard recall game that fixes "keep away" behavior</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Days 17-25: Advanced scenarios</h3>
+                <ul>
+                    <li>How to handle other dogs, wildlife, and high-arousal situations</li>
+                    <li>The distraction protocol I use with reactive dogs</li>
+                    <li>Jackpot rewards that cement the behavior</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Days 26-30: Mastery & maintenance</h3>
+                <ul>
+                    <li>Fading treats without losing progress</li>
+                    <li>Your long-term recall maintenance plan</li>
+                    <li>When to level up to off-leash freedom</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 48px;">
+            <p class="section-body">Every email includes one clear action item. Practice for 5-10 minutes. That's it.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="bg-blob blob-3"></div>
+        <div class="container">
+            <h2 class="section-headline">Real Results from Real Dog Owners</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Within weeks we had our pup under control learning all the basic commands and more importantly recall outdoors. Her calm, confident and reassuring training style did the job."</p>
+                <p class="testimonial-author">— Judy L., Training Client</p>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Now she understands commands, comes when called. Pam taught me how to work with my puppy... Pam was friendly, kind, and knowledgeable! 10/10 stars"</p>
+                <p class="testimonial-author">— Terressa S., Training Client</p>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Before Pam, whenever he saw another dog on a walk, he would start barking and lunging. After Pam, he clocks another dog but does not get distracted or reactive... Pam's 'this way' lessons were a great help with that."</p>
+                <p class="testimonial-author">— Rebecca M., Training Client</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="who-section">
+        <div class="container">
+            <h2 class="section-headline">This Works Best If...</h2>
+        </div>
+
+        <div class="who-grid">
+            <div>
+                <h3>✓ Perfect for you if:</h3>
+                <ul class="checklist good">
+                    <li>Your dog is 6 months to 3 years old (the "teenage" phase)</li>
+                    <li>They used to come when called but suddenly stopped</li>
+                    <li>You're embarrassed at the dog park or scared for their safety</li>
+                    <li>You've tried treats and bribing but nothing sticks</li>
+                    <li>You want a science-backed system, not random YouTube tips</li>
+                    <li>You can commit to 5-10 minutes of practice most days</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>✗ Probably won't work if:</h3>
+                <ul class="checklist bad">
+                    <li>Your dog has severe reactivity or aggression (let's talk about private training instead)</li>
+                    <li>You want instant results without any practice</li>
+                    <li>You're looking for off-leash hiking in week 1 (that's week 4+)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Pam Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="EBC/images/Pam_ProfilePic.jpeg" alt="Pam Brown - Dog Trainer">
+            </div>
+            <div class="about-text">
+                <h2>Why Listen to Me?</h2>
+                <p>I'm Pam Brown, CPDT-KA certified dog trainer in the Boston suburbs.</p>
+                <p>I've been training dogs for 5 years using force-free, science-backed methods. No shock collars. No dominance nonsense. Just practical systems that work for real families.</p>
+                <p>This email course is <strong>essentially</strong> the recall framework I teach in my private sessions - packaged so you can work through it on your schedule, at your pace.</p>
+                <p>Some dogs need hands-on help. But most recall issues? They're totally fixable with the right system and consistent practice.</p>
+                <p><strong>You got this.</strong></p>
+                <div class="about-note">
+                    <strong>Note:</strong> If your dog has complex reactivity or anxiety issues, private training might be a better fit. <a href="https://down4paws.com/services/">Learn about 1:1 sessions here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-headline">Join the First 50 Members at $97</h2>
+        </div>
+
+        <div class="pricing-card">
+            <div class="pricing-badge">Save $50</div>
+            <h3>30-Day Dog Recall Transformation</h3>
+
+            <div class="price-comparison">
+                <span class="old-price">$147</span>
+                <span class="new-price">$97</span>
+            </div>
+
+            <div class="savings-note">Early Bird Price - First 50 Members Only</div>
+
+            <ul class="whats-included">
+                <li>19 detailed training emails over 30 days</li>
+                <li>The complete 5-Rule Recall System</li>
+                <li>Bonus: Food Audition Protocol (find your dog's perfect reward)</li>
+                <li>Bonus: Distraction Training Roadmap</li>
+                <li>Lifetime access (re-read anytime)</li>
+            </ul>
+
+            <div class="pricing-cta">
+                <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+                    <span>Start the 30-Day Transformation - $97</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-headline">Common Questions</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>I've tried everything. Why will this work?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Because you probably tried random tips from YouTube or Instagram. This is a complete system with a specific order. Rule #3 alone ("make it happen every time") fixes most recall issues.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How is this different from private training?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Same framework, different format.</strong> Private training gives you personalized guidance and real-time feedback. This course gives you the system to implement on your own. Both work - depends on your dog's needs and your budget.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>My dog is only 4 months old. Will this work?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Definitely start now. Prevention is easier than fixing teenage regression later.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I miss a day of practice?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The emails come every 1-2 days anyway. Life happens. Pick up where you left off.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need special treats or equipment?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nope. You'll need treats your dog actually likes (I'll show you how to test), a regular leash, and 5-10 minutes a day.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>My dog is 5 years old and never learned recall. Too late?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Not too late, but it'll take more consistency. The system works for adult dogs - just expect 45-60 days instead of 30.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is this positive reinforcement training?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. 100% force-free, science-backed methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>Your Dog Can Come When Called. Let's Make It Happen.</h2>
+
+            <ul class="outcome-list">
+                <li>Comes reliably at the dog park</li>
+                <li>Responds even with distractions</li>
+                <li>Makes you feel confident instead of embarrassed</li>
+            </ul>
+
+            <p class="reality-check">Or you could keep doing what you're doing and hope it gets better.</p>
+            <p class="section-body"><strong>Let's be real</strong> - it won't get better on its own.</p>
+
+            <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+                <span>Get the Course for $97</span>
+            </a>
+
+            <p class="secondary-note">Need more personalized help? <a href="https://down4paws.com/services/">Explore private training options</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="EBC/images/D4P - Dog Icon - transparent bg.png" alt="Down 4 Paws">
+            </div>
+            <div class="footer-info">
+                <strong>Down 4 Paws Dog Training</strong> | Boston, MA<br>
+                CPDT-KA Certified | 69 Five-Star Google Reviews
+            </div>
+            <div class="footer-links">
+                <a href="https://down4paws.com/privacy-policy/">Privacy Policy</a>
+                <a href="https://down4paws.com/contact/">Contact</a>
+                <a href="https://down4paws.com/services/">Services</a>
+            </div>
+            <div class="copyright">
+                © 2024 Down 4 Paws Dog Training. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.rule-card, .timeline-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
