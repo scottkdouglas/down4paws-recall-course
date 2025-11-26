@@ -306,6 +306,123 @@
             color: var(--primary-orange);
         }
 
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 42, 159, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+            margin-top: 16px;
+        }
+
+        .certification-badge::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Mid-Page CTA */
+        .mid-cta {
+            text-align: center;
+            padding: 48px 40px;
+            background: linear-gradient(135deg, rgba(99, 42, 159, 0.05) 0%, rgba(243, 110, 20, 0.05) 100%);
+            border-top: 2px solid rgba(243, 110, 20, 0.2);
+            border-bottom: 2px solid rgba(243, 110, 20, 0.2);
+        }
+
+        .mid-cta p {
+            font-size: 18px;
+            color: var(--warm-gray);
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mid-cta .cta-btn {
+            font-size: 18px;
+            padding: 18px 40px;
+        }
+
+        /* Quick Wins Section */
+        .quick-wins {
+            background: var(--white);
+            padding: 60px 40px;
+            border-bottom: 1px solid rgba(107, 101, 96, 0.1);
+        }
+
+        .quick-wins-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .quick-wins h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--black);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .benefit-text strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 6px;
+        }
+
+        .benefit-text p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--warm-gray);
+            margin: 0;
+        }
+
         .hero-image-wrapper {
             position: relative;
             animation: fadeIn 1s ease-out 0.6s both;
@@ -364,6 +481,36 @@
             text-align: center;
         }
 
+        /* Alternating Content Sections */
+        .alt-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .alt-section.reverse {
+            direction: rtl;
+        }
+
+        .alt-section.reverse > * {
+            direction: ltr;
+        }
+
+        .alt-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(243, 110, 20, 0.1), rgba(99, 42, 159, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            opacity: 0.5;
+        }
+
         .section-headline {
             font-family: var(--font-display);
             font-size: clamp(32px, 4vw, 48px);
@@ -419,12 +566,13 @@
 
         .rule-card {
             background: var(--white);
-            padding: 36px;
+            padding: 0;
             border-radius: 24px;
-            border: 2px solid transparent;
+            border: 2px solid rgba(107, 101, 96, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .rule-card::before {
@@ -440,14 +588,60 @@
             transition: transform 0.3s ease;
         }
 
-        .rule-card:hover::before {
+        .rule-card.active::before {
             transform: scaleX(1);
         }
 
-        .rule-card:hover {
+        .rule-card:hover,
+        .rule-card.active {
             border-color: var(--primary-orange);
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .rule-header {
+            padding: 28px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .rule-header-content {
+            flex: 1;
+        }
+
+        .rule-toggle {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(243, 110, 20, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .rule-card.active .rule-toggle {
+            transform: rotate(45deg);
+            background: var(--primary-orange);
+            color: var(--white);
+        }
+
+        .rule-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 36px;
+        }
+
+        .rule-card.active .rule-body {
+            max-height: 300px;
+            padding: 0 36px 32px;
         }
 
         .rule-number {
@@ -1084,6 +1278,19 @@
                 gap: 40px;
             }
 
+            .alt-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .alt-section.reverse {
+                direction: ltr;
+            }
+
+            .alt-image {
+                height: 300px;
+            }
+
             .timeline::before {
                 left: 14px;
             }
@@ -1190,15 +1397,18 @@
             <div class="hero-text">
                 <p class="pre-headline">Does your smart dog suddenly act like they've never heard "come"?</p>
                 <h1>Your Dog Won't Come When Called — And It's Getting <span class="highlight">Scary</span></h1>
-                <p class="subhead"><strong>Here's the deal</strong> - whether it's a backyard standoff or your dog running toward the street, this is fixable. This 30-day email course teaches the same 5-rule system I use with my private clients. No fancy equipment. Just daily emails that show you what actually works.</p>
+                <p class="subhead"><strong>Here's the deal</strong> - whether it's a backyard standoff or your dog running toward the street, this is fixable. This 30-day email course teaches the same 5-rule system I use with my private clients in just 5-10 minutes a day. No fancy equipment. Just daily emails that show you what actually works.</p>
                 <div class="hero-cta-wrapper">
                     <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
                         <span>Get Total Recall in 30 Days - $97</span>
                     </a>
                     <div class="trust-indicators">
+                        <span>✓ Just 5-10 Minutes a Day</span>
                         <span>✓ 30-Day Transformation</span>
-                        <span>✓ Science-Backed</span>
-                        <span>✓ Email-Based</span>
+                        <span>✓ Science-Backed Methods</span>
+                    </div>
+                    <div class="certification-badge">
+                        CPDT-KA Certified Trainer
                     </div>
                 </div>
             </div>
@@ -1207,6 +1417,57 @@
                     <img src="EBC/HEROImage-01.png" alt="Happy dog running toward owner during recall training">
                 </div>
                 <div class="hero-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Wins Section -->
+    <section class="quick-wins">
+        <div class="quick-wins-content">
+            <h2>What You'll Get From This Course</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Understand Why Your Dog Ignores You</strong>
+                        <p>It's not stubbornness - discover what's really happening and how to fix it</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>See Results in Your First Week</strong>
+                        <p>Start noticing improvement as you implement the foundation rules</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Just 5-10 Minutes a Day</strong>
+                        <p>No lengthy training sessions - short, focused practice that fits your schedule</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Works for Any Breed, Any Age</strong>
+                        <p>From puppies to senior dogs, high-energy Aussies to stubborn Beagles</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Email-Based for Easy Access</strong>
+                        <p>No login, no platform, no friction - lessons arrive in your inbox</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Lifetime Access to All Materials</strong>
+                        <p>Re-read anytime, use with future dogs, keep forever</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1222,6 +1483,14 @@
         </div>
     </section>
 
+    <!-- Mid-Page CTA 1 -->
+    <div class="mid-cta">
+        <p>Ready to fix this? Get the proven 5-rule system that works.</p>
+        <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+            <span>Start Fixing Recall Today - $97</span>
+        </a>
+    </div>
+
     <!-- Solution Section -->
     <section class="solution-section">
         <div class="bg-blob blob-2"></div>
@@ -1232,38 +1501,81 @@
             </div>
 
             <div class="rules-grid">
-                <div class="rule-card">
-                    <span class="rule-number">RULE #1</span>
-                    <h3>Never Call for Unpleasant Things</h3>
-                    <p>Stop calling your dog to clip their nails, give them a bath, or leave the dog park. You're teaching them that "come" = something bad. Use their name or go get them instead.</p>
+                <div class="rule-card active">
+                    <div class="rule-header">
+                        <div class="rule-header-content">
+                            <span class="rule-number">RULE #1</span>
+                            <h3>Never Call for Unpleasant Things</h3>
+                        </div>
+                        <div class="rule-toggle">+</div>
+                    </div>
+                    <div class="rule-body">
+                        <p>Stop calling your dog to clip their nails, give them a bath, or leave the dog park. You're teaching them that "come" = something bad. Use their name or go get them instead.</p>
+                    </div>
                 </div>
 
                 <div class="rule-card">
-                    <span class="rule-number">RULE #2</span>
-                    <h3>Only Call When You're Sure They'll Come</h3>
-                    <p>If your dog is chasing a squirrel, don't call them. You're practicing failure. Set them up to succeed - call when distractions are low, then gradually increase difficulty.</p>
+                    <div class="rule-header">
+                        <div class="rule-header-content">
+                            <span class="rule-number">RULE #2</span>
+                            <h3>Only Call When You're Sure They'll Come</h3>
+                        </div>
+                        <div class="rule-toggle">+</div>
+                    </div>
+                    <div class="rule-body">
+                        <p>If your dog is chasing a squirrel, don't call them. You're practicing failure. Set them up to succeed - call when distractions are low, then gradually increase difficulty.</p>
+                    </div>
                 </div>
 
                 <div class="rule-card">
-                    <span class="rule-number">RULE #3</span>
-                    <h3>Make It Happen Every Time</h3>
-                    <p>If you call and they don't come, calmly go get them. Never let "come" be optional. This single rule changes everything.</p>
+                    <div class="rule-header">
+                        <div class="rule-header-content">
+                            <span class="rule-number">RULE #3</span>
+                            <h3>Make It Happen Every Time</h3>
+                        </div>
+                        <div class="rule-toggle">+</div>
+                    </div>
+                    <div class="rule-body">
+                        <p>If you call and they don't come, calmly go get them. Never let "come" be optional. This single rule changes everything.</p>
+                    </div>
                 </div>
 
                 <div class="rule-card">
-                    <span class="rule-number">RULE #4</span>
-                    <h3>Never Repeat the Command</h3>
-                    <p>Saying "come, come, COME, COME!" teaches your dog to ignore you the first 3 times. One call. Then go help them succeed.</p>
+                    <div class="rule-header">
+                        <div class="rule-header-content">
+                            <span class="rule-number">RULE #4</span>
+                            <h3>Never Repeat the Command</h3>
+                        </div>
+                        <div class="rule-toggle">+</div>
+                    </div>
+                    <div class="rule-body">
+                        <p>Saying "come, come, COME, COME!" teaches your dog to ignore you the first 3 times. One call. Then go help them succeed.</p>
+                    </div>
                 </div>
 
                 <div class="rule-card">
-                    <span class="rule-number">RULE #5</span>
-                    <h3>Pay Your Dog What They're Worth</h3>
-                    <p>Real talk - you need to figure out what your dog actually wants. For some dogs it's hot dogs. For others it's a ball. I'll show you how to run "food auditions" to discover your dog's currency.</p>
+                    <div class="rule-header">
+                        <div class="rule-header-content">
+                            <span class="rule-number">RULE #5</span>
+                            <h3>Pay Your Dog What They're Worth</h3>
+                        </div>
+                        <div class="rule-toggle">+</div>
+                    </div>
+                    <div class="rule-body">
+                        <p>Real talk - you need to figure out what your dog actually wants. For some dogs it's hot dogs. For others it's a ball. I'll show you how to run "food auditions" to discover your dog's currency.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Mid-Page CTA 2 -->
+    <div class="mid-cta">
+        <p>These 5 rules are the foundation. Get all 19 emails and transform your dog's recall in 30 days.</p>
+        <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+            <span>Get the Complete System - $97</span>
+        </a>
+    </div>
 
     <!-- How It Works Section -->
     <section class="how-it-works">
@@ -1344,6 +1656,34 @@
         </div>
     </section>
 
+    <!-- Mid-Page CTA 3 -->
+    <div class="mid-cta">
+        <p>Join dog owners who've already transformed their recall. Your turn starts now.</p>
+        <a href="https://down4paws.com/dogtraining/total-recall-in-30-days/" class="cta-btn">
+            <span>Enroll in the 30-Day Course - $97</span>
+        </a>
+    </div>
+
+    <!-- About Pam Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="EBC/Images/Pam_ProfilePic.jpeg" alt="Pam Brown - Dog Trainer">
+            </div>
+            <div class="about-text">
+                <h2>Why Listen to Me?</h2>
+                <p>I'm Pam Brown, CPDT-KA certified dog trainer in the Boston suburbs.</p>
+                <p>I've been training dogs for 5 years using force-free, science-backed methods. No shock collars. No dominance nonsense. Just practical systems that work for real families.</p>
+                <p>This email course is <strong>essentially</strong> the recall framework I teach in my private sessions - packaged so you can work through it on your schedule, at your pace.</p>
+                <p>Some dogs need hands-on help. But most recall issues? They're totally fixable with the right system and consistent practice.</p>
+                <p><strong>You got this.</strong></p>
+                <div class="about-note">
+                    <strong>Note:</strong> If your dog has complex reactivity or anxiety issues, private training might be a better fit. <a href="https://down4paws.com/services/">Learn about 1:1 sessions here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Who This Is For Section -->
     <section class="who-section">
         <div class="container">
@@ -1370,26 +1710,6 @@
                     <li>You want instant results without any practice</li>
                     <li>You're looking for off-leash hiking in week 1 (that's week 4+)</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Pam Section -->
-    <section class="about-section">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="EBC/Images/Pam_ProfilePic.jpeg" alt="Pam Brown - Dog Trainer">
-            </div>
-            <div class="about-text">
-                <h2>Why Listen to Me?</h2>
-                <p>I'm Pam Brown, CPDT-KA certified dog trainer in the Boston suburbs.</p>
-                <p>I've been training dogs for 5 years using force-free, science-backed methods. No shock collars. No dominance nonsense. Just practical systems that work for real families.</p>
-                <p>This email course is <strong>essentially</strong> the recall framework I teach in my private sessions - packaged so you can work through it on your schedule, at your pace.</p>
-                <p>Some dogs need hands-on help. But most recall issues? They're totally fixable with the right system and consistent practice.</p>
-                <p><strong>You got this.</strong></p>
-                <div class="about-note">
-                    <strong>Note:</strong> If your dog has complex reactivity or anxiety issues, private training might be a better fit. <a href="https://down4paws.com/services/">Learn about 1:1 sessions here</a>
-                </div>
             </div>
         </div>
     </section>
@@ -1558,6 +1878,15 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Rule cards accordion
+        const ruleCards = document.querySelectorAll('.rule-card');
+        ruleCards.forEach(card => {
+            const header = card.querySelector('.rule-header');
+            header.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
         });
 
         // FAQ accordion
