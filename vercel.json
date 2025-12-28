@@ -5,6 +5,20 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "puppyworkshop.down4paws.com"
+        }
+      ],
+      "destination": "/workshop.html"
+    },
+    {
+      "source": "/kickstart",
+      "destination": "/workshop.html"
+    },
+    {
       "source": "/workshop",
       "destination": "/workshop.html"
     }
