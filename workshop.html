@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kickstart Puppy Workshop - Turn Chaos Into Calm | Down 4 Paws</title>
+    <meta name="description" content="90-minute live workshop for overwhelmed puppy parents. Stop the biting, fix potty training, and get your peaceful home back. Jan 4 or Jan 30, 2026.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="EBC/Images/D4P - Dog Icon - transparent bg.png">
+
+    <!-- Fonts: Bubblegum Sans (headings) + Raleway (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Brand Foundation */
+            --purple-core: #613393;
+            --orange-core: #f36e21;
+
+            /* Expanded Warm Palette */
+            --cream: #fef9f3;
+            --warm-white: #fffcf7;
+            --beige: #f5ede3;
+            --soft-lavender: #e8dff5;
+            --lavender-mist: #f3eef9;
+            --peachy: #ffa574;
+            --soft-orange: #ffd4b8;
+            --warm-gray: #6b6560;
+            --charcoal: #2a2522;
+            --sage: #a8b5a1;
+
+            /* Typography */
+            --font-display: 'Bubblegum Sans', sans-serif;
+            --font-body: 'Raleway', sans-serif;
+
+            /* Spacing & Layout */
+            --section-padding: clamp(60px, 10vw, 120px);
+            --container-max: 1100px;
+            --content-max: 720px;
+
+            /* Effects */
+            --shadow-soft: 0 8px 32px rgba(97, 51, 147, 0.08);
+            --shadow-warm: 0 12px 40px rgba(243, 110, 20, 0.12);
+            --radius-soft: 24px;
+            --radius-round: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            background: var(--warm-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Decorative Organic Blobs */
+        .organic-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--purple-core);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--orange-core);
+            bottom: 100px;
+            left: -150px;
+            animation-delay: 5s;
+        }
+
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--sage);
+            top: 40%;
+            right: -100px;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(40px, 10px) scale(1.02); }
+        }
+
+        /* Paw Print Watermark */
+        .paw-watermark {
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.03;
+            color: var(--purple-core);
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, var(--purple-core) 0%, #7a4fb3 100%);
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .notice-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .notice-content span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Header */
+        header {
+            background: var(--warm-white);
+            border-bottom: 1px solid rgba(107, 101, 96, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            background: rgba(255, 252, 247, 0.95);
+        }
+
+        .header-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--orange-core);
+            color: white;
+            box-shadow: 0 4px 16px rgba(243, 110, 20, 0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(243, 110, 20, 0.35);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 60px 32px var(--section-padding);
+            overflow: hidden;
+        }
+
+        /* Hero Background Image */
+        .hero-image-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('EBC/Images/workshop-hero.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+            filter: blur(3px);
+        }
+
+        .hero-content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .workshop-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--lavender-mist);
+            color: var(--purple-core);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            border: 1.5px solid rgba(97, 51, 147, 0.15);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6vw, 58px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--orange-core);
+            font-style: italic;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--warm-gray);
+            max-width: 620px;
+            margin: 0 auto 48px;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Workshop Dates Card */
+        .dates-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-soft);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            border: 2px solid var(--soft-lavender);
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .dates-header {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purple-core);
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .dates-info {
+            font-size: 15px;
+            color: var(--warm-gray);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .date-list {
+            background: var(--lavender-mist);
+            padding: 24px 28px;
+            border-radius: var(--radius-round);
+            margin-bottom: 32px;
+        }
+
+        .date-item {
+            font-size: 16px;
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .date-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .date-item strong {
+            color: var(--purple-core);
+            font-weight: 700;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-family: var(--font-display);
+        }
+
+        .price-new {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--orange-core);
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--warm-gray);
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--warm-gray);
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Section Base Styles */
+        .section {
+            position: relative;
+            padding: var(--section-padding) 32px;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--warm-gray);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Pain Points Section */
+        .pain-section {
+            background: var(--beige);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pain-item {
+            background: white;
+            padding: 24px 28px;
+            border-radius: var(--radius-round);
+            border-left: 4px solid var(--peachy);
+            transition: all 0.3s ease;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .pain-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Curriculum Section */
+        .curriculum-section {
+            background: var(--warm-white);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .module-card {
+            background: white;
+            padding: 36px;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-top: 4px solid var(--purple-core);
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-warm);
+        }
+
+        .module-icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .module-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+
+        .module-card p {
+            color: var(--warm-gray);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .module-card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .module-card li {
+            color: var(--warm-gray);
+            padding-left: 24px;
+            margin-bottom: 8px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .module-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--orange-core);
+            font-weight: 700;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: var(--lavender-mist);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-round);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: Georgia, serif;
+            font-size: 80px;
+            color: var(--soft-lavender);
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--purple-core);
+            font-size: 15px;
+        }
+
+        .stars {
+            color: var(--orange-core);
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        /* Deliverables Section */
+        .deliverables-section {
+            background: linear-gradient(135deg, var(--purple-core) 0%, #7a4fb3 100%);
+            color: white;
+        }
+
+        .deliverables-section .section-title,
+        .deliverables-section .section-subtitle {
+            color: white;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+
+        .deliverable-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 28px 24px;
+            border-radius: var(--radius-round);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .deliverable-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .deliverable-item p {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .outcomes-list {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .outcomes-list li {
+            padding: 18px 0 18px 48px;
+            position: relative;
+            font-size: 17px;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .outcomes-list li:last-child {
+            border-bottom: none;
+        }
+
+        .outcomes-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            background: var(--sage);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .section-footer-text {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            background: var(--warm-white);
+        }
+
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-warm);
+            border: 2px solid var(--soft-lavender);
+        }
+
+        .booking-note {
+            background: var(--soft-orange);
+            border-left: 4px solid var(--orange-core);
+            padding: 20px 28px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .booking-note p {
+            color: var(--charcoal);
+            font-weight: 500;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        #acuity-booking {
+            min-height: 600px;
+            border-radius: var(--radius-round);
+            overflow: hidden;
+        }
+
+        #acuity-booking iframe {
+            border-radius: var(--radius-round);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--beige);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .about-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--warm-gray);
+            margin-bottom: 16px;
+        }
+
+        .about-text strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--warm-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-round);
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-warm);
+        }
+
+        .faq-question {
+            padding: 24px 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--charcoal);
+            user-select: none;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            color: var(--orange-core);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 28px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--warm-gray);
+        }
+
+        .faq-answer strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--orange-core) 0%, var(--peachy) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            opacity: 0.95;
+        }
+
+        .final-cta .btn-secondary {
+            background: white;
+            color: var(--orange-core);
+            font-size: 18px;
+            padding: 18px 48px;
+            margin-top: 32px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .final-cta .btn-secondary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 32px 32px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+            background: white;
+            border-radius: 50%;
+            padding: 12px;
+        }
+
+        .footer-info {
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-core);
+        }
+
+        .copyright {
+            font-size: 14px;
+            opacity: 0.5;
+            margin-top: 24px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 16px 20px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding-top: 48px;
+            }
+
+            .dates-card {
+                padding: 32px 24px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .section {
+                padding: 48px 20px;
+            }
+
+            .booking-container {
+                padding: 32px 20px;
+            }
+
+            .modules-grid,
+            .testimonials-grid,
+            .pain-grid,
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .notice-content {
+                font-size: 12px;
+                gap: 12px;
+            }
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--soft-lavender);
+            color: var(--purple-core);
+        }
+    </style>
+</head>
+<body>
+    <!-- Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>⭐ 69 Five-Star Google Reviews</span>
+            <span>•</span>
+            <span>🎓 CPDT-KA Certified Trainer</span>
+            <span>•</span>
+            <span>🐾 Live Workshop • Limited to 20 Spots Per Session</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="EBC/Images/D4P - Dog Icon - transparent bg.png" alt="Down 4 Paws Dog Training">
+            </div>
+            <a href="#booking" class="btn btn-primary">Choose Your Date</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Hero Background Image -->
+        <div class="hero-image-bg"></div>
+
+        <div class="organic-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <span class="paw-watermark" style="top: 10%; left: 5%;">🐾</span>
+
+        <div class="hero-content">
+            <div class="workshop-badge">
+                <span>🎥</span> Live Online • 90 Minutes
+            </div>
+
+            <h1>Stop the chaos.<br>Get your <span class="highlight">calm home</span> back.</h1>
+
+            <p class="hero-subtitle">Most puppy parents spend weeks Googling random tips that contradict each other. This 90-minute workshop gives you the exact system I use with private clients — condensed, clear, and immediately usable.</p>
+
+            <div class="dates-card">
+                <div class="dates-header">Two Workshop Dates Available:</div>
+
+                <p class="dates-info">Choose your preferred date when you register below. Both workshops cover the same content with live Q&A.</p>
+
+                <div class="date-list">
+                    <p class="date-item"><strong>Sunday, January 4th, 2026</strong> at 1:30 PM EST</p>
+                    <p class="date-item"><strong>Thursday, January 30th, 2026</strong> at 8:00 PM EST</p>
+                </div>
+
+                <div class="price-line">
+                    <span class="price-new">$67</span>
+                </div>
+                <p class="price-note">Includes live workshop + recording + workbook + lifetime access</p>
+
+                <a href="#booking" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Choose Your Date & Register</a>
+            </div>
+
+            <div class="trust-badges">
+                <span>✓ Live Q&A with Pam</span>
+                <span>✓ Downloadable Resources</span>
+                <span>✓ Watch Anytime</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="section pain-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">If your home feels like this, you're not failing.</h2>
+                <p class="section-subtitle">Most families feel overwhelmed before they get the right structure.</p>
+            </div>
+
+            <div class="pain-grid">
+                <div class="pain-item">Your puppy bites or mouths non-stop</div>
+                <div class="pain-item">Your home routine feels upside down</div>
+                <div class="pain-item">Crate training is stressful for everyone</div>
+                <div class="pain-item">Potty training feels confusing or inconsistent</div>
+                <div class="pain-item">You feel stuck watching your puppy 24/7</div>
+                <div class="pain-item">Your kids are getting overwhelmed</div>
+                <div class="pain-item">You're Googling everything and getting mixed advice</div>
+                <div class="pain-item">You want a calmer home and a clear plan that works</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section curriculum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What you'll learn in 90 minutes</h2>
+                <p class="section-subtitle">Simple, doable steps you can implement the same day.</p>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-icon">🏠</span>
+                    <h3>The Calm Home Routine</h3>
+                    <p>A clear plan for navigating your home so everyone feels calm:</p>
+                    <ul>
+                        <li>Where your puppy should be during busy times</li>
+                        <li>The "3 Room Rule" to prevent overstimulation</li>
+                        <li>Who does what (Potty, Meals, Crate, Play)</li>
+                        <li>How to create a predictable daily rhythm</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">📅</span>
+                    <h3>First Week Survival Plan</h3>
+                    <p>A simple schedule you can follow from day one:</p>
+                    <ul>
+                        <li>Sleep + nap cycle that actually works</li>
+                        <li>Potty times without guesswork</li>
+                        <li>Short play sessions (not exhausting marathons)</li>
+                        <li>Evening wind-down that prevents chaos</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">🦷</span>
+                    <h3>How to Stop Biting</h3>
+                    <p>Why it happens and how to stop it without yelling:</p>
+                    <ul>
+                        <li>The 3-step redirect method</li>
+                        <li>Stopping the "witching hour" meltdowns</li>
+                        <li>Helping puppies who nip out of excitement</li>
+                        <li>Keeping kids safe during play</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">🚽</span>
+                    <h3>Potty Training That Works</h3>
+                    <p>Finally understand:</p>
+                    <ul>
+                        <li>How long your puppy can actually hold it</li>
+                        <li>What to do during winter or rain</li>
+                        <li>How to fix regression fast</li>
+                        <li>The "just went outside and peed again" problem</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">🛏️</span>
+                    <h3>Crate Training Without Tears</h3>
+                    <p>A calm plan for:</p>
+                    <ul>
+                        <li>Whining (without giving in)</li>
+                        <li>Bedtime routines that stick</li>
+                        <li>Building independence gradually</li>
+                        <li>Reducing anxiety for anxious puppies</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">🐕</span>
+                    <h3>Leash Foundations & First Walks</h3>
+                    <p>You'll learn:</p>
+                    <ul>
+                        <li>How to prevent pulling before it becomes a habit</li>
+                        <li>Building focus around distractions</li>
+                        <li>When to actually start outdoor walks</li>
+                        <li>Gear that helps (and what's a waste of money)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">👥</span>
+                    <h3>Socialization Done Right</h3>
+                    <p>Safe exposure your puppy benefits from:</p>
+                    <ul>
+                        <li>Home-based socialization (no dog parks needed)</li>
+                        <li>Winter-friendly exposures</li>
+                        <li>Confidence building without overwhelm</li>
+                        <li>What NOT to do (common mistakes)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-icon">💪</span>
+                    <h3>Building Confidence & Independence</h3>
+                    <p>Help your puppy learn to:</p>
+                    <ul>
+                        <li>Settle alone without panic</li>
+                        <li>Handle short separations calmly</li>
+                        <li>Feel safe without constant attention</li>
+                        <li>Avoid future clinginess or separation anxiety</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What puppy parents say after working with Pam</h2>
+                <p class="section-subtitle">Real results from private training sessions using the same methods.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Within weeks we had our pup under control learning all the basic commands and more importantly recall outdoors. Her calm, confident and reassuring training style did the job."</p>
+                    <p class="testimonial-author">— Judy Lynch-Hudson</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"We got a new puppy and she wasn't understanding commands. Now she understands commands, comes when called. Pam taught me how to work with my puppy on being home alone."</p>
+                    <p class="testimonial-author">— Terressa Stephans</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Our 10 week old puppy was play biting too hard and aggressively. Pam gave us practical tools to address the behavior. We are looking forward to the upcoming puppy socialization class."</p>
+                    <p class="testimonial-author">— Nikomo Peartree</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"My 6 month old puppy had separation anxiety where he would nip at my ankles when leaving. In a matter of a few weeks, Archie no longer reacts when I get ready to leave. Would 10/10 recommend her."</p>
+                    <p class="testimonial-author">— Alyssa Menard</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Day one we had a puppy that would fly out the door. At the end of our first week he was sitting and waiting for us to invite him out! We had so much progress we signed up for a second set of training sessions."</p>
+                    <p class="testimonial-author">— Mallnee Mitchell</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I contacted Pam when I was at my wits end about my puppy's behavior. She gave me specific strategies I could immediately put into place. It has only been a couple of days and I've seen a difference in my puppy's barking already."</p>
+                    <p class="testimonial-author">— Tee S</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="section deliverables-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What you get</h2>
+                <p class="section-subtitle">Everything is simple, calm, and ready to use immediately.</p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">📹</span>
+                    <p>Live 90-minute workshop</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">📚</span>
+                    <p>Downloadable workbook</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">🗺️</span>
+                    <p>Home routine map</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">📋</span>
+                    <p>Potty training guide</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">✅</span>
+                    <p>Biting redirect plan</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">🎯</span>
+                    <p>Crate training checklist</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">💡</span>
+                    <p>Socialization ideas</p>
+                </div>
+                <div class="deliverable-item">
+                    <span class="deliverable-icon">❓</span>
+                    <p>Live Q&A with Pam</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 64px; margin-bottom: 32px;">
+                <h2 class="section-title">After this workshop you will...</h2>
+            </div>
+
+            <ul class="outcomes-list">
+                <li>Feel confident with a clear home routine</li>
+                <li>Understand your puppy's behavior (not just guess)</li>
+                <li>Know exactly what to do every day</li>
+                <li>Reduce biting, barking, accidents, and chaos</li>
+                <li>Feel calm instead of overwhelmed</li>
+                <li>Get your home back into a peaceful flow</li>
+                <li>Enjoy raising your puppy with less stress</li>
+            </ul>
+
+            <p class="section-footer-text">This is your foundation for a well-behaved adult dog.</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section booking-section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose your date & register</h2>
+                <p class="section-subtitle">Limited to 20 participants per workshop for quality Q&A time.</p>
+            </div>
+
+            <div class="booking-container">
+                <div class="booking-note">
+                    <p><strong>$67 Investment</strong> – Includes live workshop, downloadable workbook, all checklists, and lifetime access to recording</p>
+                </div>
+
+                <div id="acuity-booking">
+                    <iframe src="https://app.acuityscheduling.com/schedule.php?owner=24021188&appointmentType=87209372" width="100%" height="800" frameBorder="0" allow="payment"></iframe>
+                    <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Pam Section -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet your instructor</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="EBC/Images/Pam_ProfilePic.jpeg" alt="Pam Brown, CPDT-KA">
+                </div>
+                <div class="about-text">
+                    <h3>Pam Brown, CPDT-KA</h3>
+                    <p>I'm Pam, a certified dog trainer and calm-structure specialist for busy families.</p>
+                    <p>Every week, I help overwhelmed parents turn chaos into confidence. I've spent years working with families who thought they were "doing it wrong" — when really, they just needed a clear plan.</p>
+                    <p><strong>This workshop is the same system I use with my private clients</strong> — adapted into a 90-minute format you can implement immediately.</p>
+                    <p>Your puppy can learn quickly. Your home can feel peaceful again. You just need the right structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Common questions</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>What if I can't attend live?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll receive lifetime access to the workshop recording. Watch it on your schedule and revisit anytime you need a refresher.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in the $67?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The full 90-minute live workshop, downloadable workbook with all training plans and checklists, lifetime access to the recording, and live Q&A time with Pam to get your specific questions answered.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this for first-time puppy owners only?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all. This workshop helps anyone with a new puppy — whether it's your first or fifth. The system works for all experience levels.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What platform is the workshop on?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Riverside.fm</strong> — you'll receive the meeting link via email after registration. No special software required, works in your browser.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>My puppy is older than 6 months. Will this still work?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many of the foundations (crate training, potty training, reducing biting) work for young dogs up to 12 months. The earlier you start, the better — but it's never too late to create better routines.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I have multiple puppies or kids?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Perfect. This system was designed for busy families with kids, multiple dogs, or both. The 3 Room Rule and home routine structure help you manage chaos without losing your mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section final-cta">
+        <div class="final-cta-content">
+            <h2>Your puppy can learn quickly.<br>Your home can feel peaceful again.</h2>
+            <p>You don't need perfection.</p>
+            <p>You need guidance, structure, and support.</p>
+            <p>That's what this workshop delivers.</p>
+            <a href="#booking" class="btn btn-secondary">Register for Workshop — $67</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="EBC/Images/D4P - Dog Icon - transparent bg.png" alt="Down 4 Paws">
+        </div>
+        <div class="footer-info">
+            <strong>Down 4 Paws Dog Training</strong> | Boston, MA<br>
+            CPDT-KA Certified | 69 Five-Star Google Reviews
+        </div>
+        <div class="footer-links">
+            <a href="https://down4paws.com/privacypolicy/">Privacy Policy</a>
+            <a href="https://down4paws.com/about-d4p/">Contact</a>
+            <a href="https://down4paws.com/services/">Services</a>
+        </div>
+        <div class="copyright">
+            © 2026 Down 4 Paws Dog Training. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe module cards for stagger effect
+        document.querySelectorAll('.module-card, .testimonial-card, .pain-item').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
