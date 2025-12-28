@@ -3,7 +3,7 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
       "has": [
@@ -12,8 +12,11 @@
           "value": "puppyworkshop.down4paws.com"
         }
       ],
-      "destination": "/workshop.html"
-    },
+      "destination": "/kickstart",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
     {
       "source": "/kickstart",
       "destination": "/workshop.html"
