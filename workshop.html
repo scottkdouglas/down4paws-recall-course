@@ -9,6 +9,24 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="EBC/Images/D4P - Dog Icon - transparent bg.png">
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2566661526972121');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2566661526972121&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Fonts: Bubblegum Sans (headings) + Raleway (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1435,6 +1453,43 @@
     </footer>
 
     <script>
+        // Generate unique event ID for deduplication
+        function generateEventId() {
+            return 'eid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Fire ViewContent on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            fbq('track', 'ViewContent', {
+                content_name: 'Kickstart Puppy Workshop',
+                content_category: 'Workshop',
+                content_type: 'product',
+                content_ids: ['kickstart-puppy-workshop-jan30'],
+                value: 67.00,
+                currency: 'USD'
+            });
+        });
+
+        // Fire InitiateCheckout on Register/CTA button clicks
+        document.addEventListener('click', function(e) {
+            var target = e.target.closest('a.btn-primary, a.btn-secondary');
+            if (target && (target.href.includes('#booking') || target.textContent.toLowerCase().includes('register'))) {
+                var eventId = generateEventId();
+
+                fbq('track', 'InitiateCheckout', {
+                    content_name: 'Kickstart Puppy Workshop',
+                    content_category: 'Workshop',
+                    content_ids: ['kickstart-puppy-workshop-jan30'],
+                    value: 67.00,
+                    currency: 'USD',
+                    num_items: 1
+                }, {eventID: eventId});
+
+                // Store eventId in case needed for server-side dedup
+                console.log('InitiateCheckout eventID:', eventId);
+            }
+        });
+
         // Header scroll effect
         const header = document.getElementById('header');
         let lastScroll = 0;
